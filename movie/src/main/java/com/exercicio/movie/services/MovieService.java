@@ -25,10 +25,10 @@ public class MovieService {
 	private Logger logger = LoggerFactory.getLogger(this.getClass());
 	
 	@Autowired
-	public TheMovieDbApi theMovieDbApi;
+	private TheMovieDbApi theMovieDbApi;
 	
 	@Autowired
-	public NewYorkTimesApi newYorkTimesApi;
+	private NewYorkTimesApi newYorkTimesApi;
 	
 	public OutputStream export(List<Movie> filmes) throws IOException {
 		return PowerPointConverter.convertMovieToFileOutputStream(filmes);
