@@ -3,11 +3,9 @@ package com.exercicio.movie.controllers;
 import java.io.FileInputStream;
 import java.io.InputStream;
 import java.io.OutputStream;
-import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 import org.apache.commons.io.IOUtils;
 import org.slf4j.Logger;
@@ -22,7 +20,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.server.ResponseStatusException;
 
-import com.exercicio.movie.response.Movie;
 import com.exercicio.movie.response.Response;
 import com.exercicio.movie.services.MovieService;
 import com.exercicio.movie.sessao.Sessao;

@@ -20,9 +20,9 @@ public class Sessao {
 	}
 	
 	public static void gerarDadosSessao(HttpServletRequest request, Response response) {
-		if(response != null && !Validator.validaListVazioOrNull(response.getFilmes()) && !Validator.validaStringVazioOrNull(response.getToken())) {
+		if(response != null && !Validator.validaListVazioOrNull(response.getFilmes()) && !Validator.validaStringVazioOrNull(response.getApikey())) {
 			HttpSession session = request.getSession();
-			session.setAttribute(response.getToken(), response);
+			session.setAttribute(response.getApikey(), response);
 		}
 	}
 }

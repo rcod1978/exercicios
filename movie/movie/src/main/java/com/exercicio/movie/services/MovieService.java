@@ -49,7 +49,7 @@ public class MovieService {
 			Response responseSessao = verificarDadosSessao(nome, request, apikey, response);
 			if(responseSessao != null && TipoPesquisa.REALIZADOR.toString().equals(responseSessao.getTipoPesquisa()) && !Validator.validaListVazioOrNull(responseSessao.getFilmes()) && nome.trim().equals(responseSessao.getNomePesquisado())) {
 				response.setFilmes(responseSessao.getFilmes());
-				response.setToken(responseSessao.getToken());
+				response.setApikey(responseSessao.getApikey());
 				return response;
 			}else {
 				List<Movie> filmesTheMovieDb = theMovieDbApi.getMoviesByRealizador(nome);
@@ -81,10 +81,10 @@ public class MovieService {
 					logger.info("############# FILMES ####################");
 					filmes.forEach(System.out::println);
 					logger.info("############# FILMES ####################");
-					if(responseSessao != null && !Validator.validaStringVazioOrNull(responseSessao.getToken())) {
-						response.setToken(responseSessao.getToken());
+					if(responseSessao != null && !Validator.validaStringVazioOrNull(responseSessao.getApikey())) {
+						response.setApikey(responseSessao.getApikey());
 					}else {
-						response.setToken(getToken());	
+						response.setApikey(getApikey());	
 					}
 					response.setFilmes(filmes);
 					Sessao.gerarDadosSessao(request, response);
@@ -106,7 +106,7 @@ public class MovieService {
 			Response responseSessao = verificarDadosSessao(nome, request, apikey, response);
 			if(responseSessao != null && TipoPesquisa.ATOR.toString().equals(responseSessao.getTipoPesquisa()) && !Validator.validaListVazioOrNull(responseSessao.getFilmes()) && nome.trim().equals(responseSessao.getNomePesquisado())) {
 				response.setFilmes(responseSessao.getFilmes());
-				response.setToken(responseSessao.getToken());
+				response.setApikey(responseSessao.getApikey());
 				return response;
 			}else {
 				List<Movie> filmesTheMovieDb = theMovieDbApi.getMoviesByActor(nome);
@@ -131,10 +131,10 @@ public class MovieService {
 					logger.info("############# FILMES ####################");
 					filmes.forEach(System.out::println);
 					logger.info("############# FILMES ####################");
-					if(responseSessao != null && !Validator.validaStringVazioOrNull(responseSessao.getToken())) {
-						response.setToken(responseSessao.getToken());
+					if(responseSessao != null && !Validator.validaStringVazioOrNull(responseSessao.getApikey())) {
+						response.setApikey(responseSessao.getApikey());
 					}else {
-						response.setToken(getToken());	
+						response.setApikey(getApikey());	
 					}
 					response.setFilmes(filmes);
 					Sessao.gerarDadosSessao(request, response);
@@ -160,7 +160,7 @@ public class MovieService {
 		return responseSessao;
 	}
 
-	private String getToken() {
+	private String getApikey() {
 		return UUID.randomUUID().toString();
 	}
 }
