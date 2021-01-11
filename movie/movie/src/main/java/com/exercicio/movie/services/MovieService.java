@@ -47,7 +47,7 @@ public class MovieService {
 		response.setNomePesquisado(nome);
 		try{
 			Response responseSessao = verificarDadosSessao(nome, request, apikey, response);
-			if(responseSessao != null && TipoPesquisa.ATOR.toString().equals(responseSessao.getTipoPesquisa()) && !Validator.validaListVazioOrNull(responseSessao.getFilmes()) && nome.trim().equals(responseSessao.getNomePesquisado())) {
+			if(responseSessao != null && TipoPesquisa.REALIZADOR.toString().equals(responseSessao.getTipoPesquisa()) && !Validator.validaListVazioOrNull(responseSessao.getFilmes()) && nome.trim().equals(responseSessao.getNomePesquisado())) {
 				response.setFilmes(responseSessao.getFilmes());
 				response.setToken(responseSessao.getToken());
 				return response;
