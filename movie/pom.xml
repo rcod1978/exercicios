@@ -79,6 +79,12 @@
 			<scope>test</scope>
 		</dependency>
 
+		<dependency>
+		    <groupId>com.fasterxml.uuid</groupId>
+		    <artifactId>java-uuid-generator</artifactId>
+		    <version>4.0.1</version>
+		</dependency>
+
 	</dependencies>
 
 	<build>

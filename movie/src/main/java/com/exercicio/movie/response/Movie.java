@@ -9,6 +9,7 @@ public class Movie {
 	private String realizador;
 	private List<Ator> protagonistas;
 	private Integer anoLancamento;
+	private String token; 
 	
 	public String getNomeFilme() {
 		return nomeFilme;
@@ -50,6 +51,12 @@ public class Movie {
 			return "";
 		}
 		
+	}
+	public String getToken() {
+		return token;
+	}
+	public void setToken(String token) {
+		this.token = token;
 	}
 	
 	
